@@ -46,15 +46,22 @@ public class Mailer {
                 settings.load(in);
             }
         }
-        host = settings.getProperty("mail.host", "smtp.gmail.com").trim();
-        port = Integer.parseInt(settings.getProperty("mail.port", "587").trim());
-        user = settings.getProperty("mail.user", "").trim();
+        // An environment variable, if set, wins over the file (used when hosted online).
+        host = setting(settings, "MAIL_HOST", "mail.host", "smtp.gmail.com").trim();
+        port = Integer.parseInt(setting(settings, "MAIL_PORT", "mail.port", "587").trim());
+        user = setting(settings, "MAIL_USER", "mail.user", "").trim();
         // Gmail shows app passwords as "abcd efgh ijkl mnop"; the spaces are not part of it.
-        password = settings.getProperty("mail.password", "").replace(" ", "");
+        password = setting(settings, "MAIL_PASSWORD", "mail.password", "").replace(" ", "");
         if (user.startsWith("YOUR_") || password.startsWith("YOUR_")) {
             user = "";
             password = "";
         }
+    }
+
+    private static String setting(Properties file, String envName, String key, String defaultValue) {
+        String env = System.getenv(envName);
+        if (env != null && !env.isBlank()) return env;
+        return file.getProperty(key, defaultValue);
     }
 
     /** true if an email account has been set up in mail.properties. */

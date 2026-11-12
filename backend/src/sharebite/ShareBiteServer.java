@@ -38,6 +38,8 @@ public class ShareBiteServer {
             env("CORS_ALLOWED_ORIGINS", "http://localhost:5500,http://127.0.0.1:5500").split("\\s*,\\s*"));
     /** true = no real email/SMS service, so the OTP is shown on the page and in the console. */
     static final boolean OTP_DEMO_MODE = Boolean.parseBoolean(env("OTP_DEMO_MODE", "true"));
+    /** true only when running behind a hosting proxy that sets X-Forwarded-For (e.g. Render). */
+    static final boolean TRUST_PROXY = Boolean.parseBoolean(env("TRUST_PROXY", "false"));
 
     private static final int MAX_BODY_BYTES = 20_000;
 
@@ -230,6 +232,12 @@ public class ShareBiteServer {
      * That header is trusted only for requests coming from this computer.
      */
     private static String clientIp(HttpExchange exchange) {
+        // When hosted online (Render), requests pass through the host's proxy, which puts
+        // the visitor's address first in X-Forwarded-For. Only trusted when TRUST_PROXY=true.
+        if (TRUST_PROXY) {
+            String chain = exchange.getRequestHeaders().getFirst("X-Forwarded-For");
+            if (chain != null && !chain.isBlank()) return chain.split(",")[0].trim();
+        }
         java.net.InetAddress remote = exchange.getRemoteAddress().getAddress();
         String forwarded = exchange.getRequestHeaders().getFirst("CF-Connecting-IP");
         if (remote.isLoopbackAddress() && forwarded != null && !forwarded.isBlank()) {

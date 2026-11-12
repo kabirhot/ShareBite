@@ -1,0 +1,6 @@
+.git
+backend/out
+backend/lib/*.jar
+backend/db.properties
+backend/mail.properties
+backend/data
