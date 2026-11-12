@@ -4,6 +4,10 @@ ShareBite is a surplus food distribution website. It connects **food donors**, *
 
 College project: HTML/CSS/JavaScript frontend, connected through a REST API to a Java backend, which stores its data in MySQL using JDBC.
 
+**Live site:** https://sharebite-u9z1.onrender.com
+
+(Hosted on a free server that sleeps when unused, so the first visit can take about a minute to load.)
+
 ## How it works
 
 ```
@@ -177,6 +181,27 @@ In both modes an OTP is valid for 5 minutes, allows 5 wrong attempts, and a new 
 ## Settings
 
 Database settings are in `backend/db.properties`. Optional environment variables (see `.env.example`): `PORT`, `CORS_ALLOWED_ORIGINS`, `OTP_DEMO_MODE`, and `DB_URL`, `DB_USER`, `DB_PASSWORD` (these override `db.properties`).
+
+## Online hosting
+
+The live site runs without any personal computer:
+
+| Part | Where it runs |
+|------|---------------|
+| Java backend + frontend | [Render](https://render.com) free web service, built from this repository with the `Dockerfile` |
+| MySQL database | [Aiven](https://aiven.io) cloud MySQL |
+| OTP emails | Gmail SMTP |
+
+Every push to the `main` branch rebuilds and redeploys the site automatically.
+
+Passwords are never stored in the repository. On Render they are set as environment variables:
+
+| Variable | Purpose |
+|----------|---------|
+| `DB_URL`, `DB_USER`, `DB_PASSWORD` | Connection to the cloud MySQL database (JDBC) |
+| `MAIL_USER`, `MAIL_PASSWORD`, `MAIL_PORT` | Gmail account and app password used to send OTP emails |
+| `OTP_DEMO_MODE=false` | Never show the OTP on the page |
+| `TRUST_PROXY=true` | Read the visitor's real IP from Render's proxy (used by the rate limit) |
 
 ## Security points
 
