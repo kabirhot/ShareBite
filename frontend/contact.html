@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ShareBite</title>
+    <meta name="description" content="Contact the ShareBite team.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+<section id="contact" class="page">
+
+    <div class="contact-container">
+
+        <h1>Get in Touch with ShareBite</h1>
+
+        <p class="contact-intro">
+            Have a question, want to donate food, volunteer, or partner with us?
+            We'd love to hear from you.
+        </p>
+
+        <div class="contact-content">
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+
+                <h2>Contact Information</h2>
+
+                <div class="info-box">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:support@sharebite.com">support@sharebite.com</a></p>
+                </div>
+
+                <div class="info-box">
+                    <h3>📞 Phone</h3>
+                    <p>+91 XXXXX XXXXX</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>📍 Location</h3>
+                    <p>Mumbai, Maharashtra, India</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>🕐 Working Hours</h3>
+                    <p>Monday – Saturday</p>
+                    <p>9:00 AM – 6:00 PM</p>
+                </div>
+
+                <h2>Follow ShareBite</h2>
+
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+
+            </div>
+
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+
+                <h2>Send Us a Message</h2>
+
+                <form id="contactForm">
+
+                    <label for="contactName">Full Name</label>
+                    <input
+                        type="text"
+                        id="contactName"
+                        name="name"
+                        maxlength="80"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                    <label for="contactEmail">Email ID</label>
+                    <input
+                        type="email"
+                        id="contactEmail"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                    <label for="contactPhone">Contact Number</label>
+                    <input
+                        type="tel"
+                        id="contactPhone"
+                        name="phone"
+                        maxlength="15"
+                        placeholder="Enter your contact number"
+                    >
+
+                    <label for="subject">Subject</label>
+
+                    <select id="subject" name="subject" required>
+
+                        <option value="">Select Subject</option>
+                        <option value="General Inquiry">
+                            General Inquiry
+                        </option>
+
+                        <option value="Food Donation">
+                            Food Donation
+                        </option>
+
+                        <option value="Food Request">
+                            Food Request
+                        </option>
+
+                        <option value="Volunteer">
+                            Volunteer
+                        </option>
+
+                        <option value="Partnership">
+                            Partnership
+                        </option>
+
+                        <option value="Technical Issue">
+                            Technical Issue
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                    <label for="message">Message</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        maxlength="2000"
+                        rows="5"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+
+                    <p id="msg" class="form-msg" role="status" aria-live="polite"></p>
+                    <button type="submit" class="btn btn-primary">
+                        📨 Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- Quick Help -->
+
+        <div class="quick-help">
+
+            <h2>Want to Help?</h2>
+
+            <p>
+                Be a part of ShareBite and help us reduce food waste.
+            </p>
+
+            <div class="help-buttons">
+
+                <a class="help-link" href="food-donor.html">🍱 Donate Food</a>
+
+                <a class="help-link" href="volunteers.html">🤝 Become a Volunteer</a>
+
+                <a class="help-link" href="food-receiver.html">🥗 Request Food</a>
+
+            </div>
+
+        </div>
+
+
+        <a class="back-button" href="index.html">← Back to Home</a>
+
+    </div>
+
+</section>
+    <script src="js/api.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Email settings for sending the OTP.
+# Copy this file, name the copy  mail.properties , and fill in the two values.
+# mail.properties is listed in .gitignore, so it is never uploaded to GitHub.
+#
+# mail.user     = the Gmail address the OTP emails are sent FROM
+# mail.password = a Gmail "app password" (16 letters), NOT your normal Gmail password.
+#                 Create one at https://myaccount.google.com/apppasswords
+#                 (2-Step Verification must be switched on for the account first).
+#
+# If mail.properties does not exist, the project stays in demo mode
+# and shows the OTP on the page instead.
+
+mail.host=smtp.gmail.com
+# 587 (STARTTLS) works on most computers; use 465 if your network needs it
+mail.port=587
+mail.user=YOUR_GMAIL_ADDRESS
+mail.password=YOUR_16_LETTER_APP_PASSWORD

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Registration - ShareBite</title>
+    <meta name="description" content="Register as a ShareBite volunteer to pick up and deliver food.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<style>
+    * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFF8E7;
+    margin: 0;
+    padding: 30px 15px;
+    color: #333333;
+}
+
+/* MAIN CARD */
+
+section {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 35px;
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* HEADER */
+
+.header-icon {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+
+h1 {
+    text-align: center;
+    color: #2E7D32;
+    font-size: 34px;
+    margin: 5px 0;
+}
+
+.highlight {
+    color: #FF8F00;
+}
+
+h2 {
+    text-align: center;
+    color: #333333;
+    font-size: 27px;
+    margin: 10px 0;
+}
+
+.subtitle {
+    text-align: center;
+    color: #2E7D32;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.description {
+    text-align: center;
+    color: #666666;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+/* FORM SECTIONS */
+
+.form-section {
+    background-color: #F8FFF8;
+    border: 1px solid #D7EBD8;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 22px;
+}
+
+.form-section h3 {
+    color: #2E7D32;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 20px;
+    border-bottom: 1px solid #D7EBD8;
+    padding-bottom: 10px;
+}
+
+/* LABEL */
+
+label {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #444444;
+}
+
+/* INPUT, SELECT AND TEXTAREA */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #81C784;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    background-color: #FFFFFF;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #2E7D32;
+    box-shadow: 0 0 5px rgba(46, 125, 50, 0.25);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* DONATE BUTTON */
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    background-color: #2E7D32;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #1B5E20;
+    transform: translateY(-2px);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 22px 15px;
+        margin: 10px auto;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    .form-section {
+        padding: 17px;
+    }
+
+    .header-icon {
+        font-size: 42px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+}
+</style>
+<body>
+    <nav class="app-bar" aria-label="Account">
+        <a class="brand" href="index.html">SHARE BITE</a>
+        <a href="dashboard.html">Dashboard</a>
+        <button type="button" id="logoutBtn">Logout</button>
+    </nav>
+    <section>
+        <h2>Volunteers <span class="highlight">Registration</span></h2>
+        <p class="subtitle">
+            Join us in collecting and distributing food to people in need.
+        </p>
+        <p class="description">
+            Register as a volunteer and help collect, manage and deliver
+            surplus food to people who need it.
+        </p>
+
+        <form id="volunteerForm">
+            <div class="form-section">
+                <h3>👤 Volunteer Details</h3>
+                <label for="volunteerName">
+                    Volunteer Name:
+                </label>
+                <input
+                    type="text"
+                    id="volunteerName"
+                    name="volunteerName"
+                    placeholder="Enter your name"
+                    required
+                >
+                <label for="email">
+                    Email ID:
+                </label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email ID"
+                    required
+                >
+                <label for="contact">
+                    Contact Number:
+                </label>
+                <input
+                    type="tel"
+                    id="contact"
+                    name="contact"
+                    placeholder="Enter your 10-digit number"
+                    maxlength="10"
+                    pattern="[0-9]{10}"
+                    required
+                >
+                <label for="location">
+                    Location:
+                </label>
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="Enter your location"
+                    required
+                >
+            </div>
+
+            <div class="form-section">
+                <h3>🕐 Availability &amp; Work</h3>
+                <label for="availability">
+                    Availability:
+                </label>
+                <select
+                    name="availability"
+                    id="availability"
+                    required
+                >
+                    <option value="">
+                        Select Availability
+                    </option>
+                    <option value="morning">
+                        Morning
+                    </option>
+                    <option value="afternoon">
+                        Afternoon
+                    </option>
+                    <option value="evening">
+                        Evening
+                    </option>
+                    <option value="full-day">
+                        Full Day
+                    </option>
+                </select>
+
+                <label for="work">
+                    Volunteer Work:
+                </label>
+                <select
+                    name="work"
+                    id="work"
+                    required
+                >
+                    <option value="">
+                        Select Work
+                    </option>
+                    <option value="foodpickup">
+                        Food Pickup
+                    </option>
+                    <option value="fooddelivery">
+                        Food Delivery
+                    </option>
+                    <option value="both">
+                        Both
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <h3>🚗 Vehicle Details</h3>
+                <label for="vehicle">
+                    Do you have a vehicle?
+                </label>
+                <select
+                    name="vehicle"
+                    id="vehicle"
+                >
+                    <option value="">
+                        Select Option
+                    </option>
+                    <option value="yes">
+                        YES
+                    </option>
+                    <option value="no">
+                        NO
+                    </option>
+                </select>
+
+                <label for="type">
+                    Vehicle Type:
+                </label>
+                <select
+                    name="type"
+                    id="type"
+                >
+                    <option value="">
+                        Select Vehicle
+                    </option>
+                    <option value="bike">
+                        Bike
+                    </option>
+                    <option value="scooter">
+                        Scooter
+                    </option>
+                    <option value="car">
+                        Car
+                    </option>
+                    <option value="other">
+                        Other
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <h3>📍 Service Details</h3>
+                <label for="area">
+                    Preferred Service Area:
+                </label>
+                <input
+                    type="text"
+                    id="area"
+                    name="area"
+                    placeholder="Enter your preferred service area"
+                    required
+                >
+
+                <label for="message">
+                    Additional Information:
+                </label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Enter any additional information if required"
+                ></textarea>
+            </div>
+
+            <p id="msg" class="form-msg" role="status" aria-live="polite"></p>
+
+            <button type="submit">
+                🤝 REGISTER AS VOLUNTEER
+            </button>
+        </form>
+    </section>
+    <script src="js/api.js"></script>
+    <script src="js/volunteers.js"></script>
+</body>
+</html>

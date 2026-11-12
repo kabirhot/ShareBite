@@ -1,0 +1,110 @@
+/* Shared styles added for the pages that talk to the backend. */
+
+/* Message shown after a form is submitted */
+.form-msg {
+    display: none;
+    margin: 16px 0;
+    padding: 12px 14px;
+    border-radius: 7px;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: left;
+}
+.form-msg.show { display: block; }
+.form-msg.success { background: #E8F5E9; color: #1B5E20; border: 1px solid #81C784; }
+.form-msg.error { background: #FDECEA; color: #8A1C13; border: 1px solid #E57373; }
+.form-msg.info { background: #FFF8E1; color: #6B4A00; border: 1px solid #FFCC80; }
+
+/* Red text under a field the server rejected */
+.field-error {
+    display: block;
+    margin-top: 5px;
+    color: #B3261E;
+    font-size: 14px;
+    font-weight: normal;
+}
+input.invalid, select.invalid, textarea.invalid { border-color: #B3261E; }
+
+/* Drop-downs on the sign in page had no styling */
+section select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #81C784;
+    border-radius: 7px;
+    font-size: 15px;
+    background-color: #FFFFFF;
+}
+
+button:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+/* Keyboard users can see which element is selected */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+    outline: 3px solid #FF8F00;
+    outline-offset: 2px;
+}
+
+/* Small bar at the top of the logged-in pages */
+.app-bar {
+    max-width: 1000px;
+    margin: 0 auto 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.app-bar .brand {
+    margin-right: auto;
+    color: #2E7D32;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+}
+.app-bar a { color: #2E7D32; font-weight: bold; text-decoration: none; padding: 8px 4px; }
+.app-bar a:hover { text-decoration: underline; }
+.app-bar button {
+    width: auto;
+    margin: 0;
+    padding: 9px 16px;
+    font-size: 15px;
+    background: #555555;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.app-bar button:hover { background: #333333; }
+
+.legal-links { text-align: center; font-size: 14px; color: #555555; margin-top: 18px; }
+.legal-links a { color: #2E7D32; }
+
+/* Dashboard */
+.dash { max-width: 1000px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; color: #333333; }
+.dash h1 { color: #2E7D32; font-size: 30px; margin: 20px 0 6px; text-align: left; }
+.dash h2 { color: #2E7D32; font-size: 22px; margin: 34px 0 10px; text-align: left; }
+.dash .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0; }
+.dash .actions a {
+    background: #2E7D32; color: #FFFFFF; text-decoration: none; font-weight: bold;
+    padding: 12px 18px; border-radius: 7px;
+}
+.dash .actions a:hover { background: #1B5E20; }
+.table-wrap { overflow-x: auto; background: #FFFFFF; border: 1px solid #D7EBD8; border-radius: 10px; }
+.dash table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.dash th, .dash td { text-align: left; padding: 11px 13px; border-bottom: 1px solid #E6F0E6; vertical-align: top; }
+.dash th { background: #F1F8F1; color: #1B5E20; white-space: nowrap; }
+.dash tr:last-child td { border-bottom: none; }
+.dash .state { padding: 22px 14px; color: #555555; }
+.dash .state button {
+    width: auto; margin-left: 10px; padding: 7px 14px; background: #2E7D32; color: #FFFFFF;
+    border: none; border-radius: 6px; cursor: pointer; font-size: 14px;
+}
+
+/* Privacy / terms / 404 pages */
+.doc { max-width: 760px; margin: 30px auto; padding: 30px; background: #FFFFFF; border-radius: 14px;
+       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10); font-family: Arial, Helvetica, sans-serif;
+       color: #333333; line-height: 1.65; }
+.doc h1 { color: #2E7D32; font-size: 30px; margin: 0 0 6px; }
+.doc h2 { color: #2E7D32; font-size: 20px; margin: 26px 0 6px; }
+.doc a { color: #2E7D32; font-weight: bold; }
+.doc-body { background: #FFF8E7; margin: 0; padding: 20px 15px; }

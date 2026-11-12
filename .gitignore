@@ -1,0 +1,29 @@
+# Compiled Java classes
+backend/out/
+*.class
+
+# Database password. Never upload this file (db.properties.example is uploaded instead).
+backend/db.properties
+
+# Email account password. Never upload this file either.
+backend/mail.properties
+
+# Old JSON data files from the version without a database
+backend/data/
+
+# Secrets / local settings
+.env
+.env.*
+!.env.example
+
+# Editors and OS files
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+*.lnk
+*.log
+
+# The JDBC driver is downloaded by run.bat, so the jar is not stored in git
+backend/lib/*.jar

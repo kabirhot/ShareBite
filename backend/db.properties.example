@@ -1,0 +1,7 @@
+# Database connection settings.
+# Copy this file, name the copy  db.properties , and type your own MySQL password.
+# db.properties is listed in .gitignore, so your password is never uploaded to GitHub.
+
+db.url=jdbc:mysql://localhost:3306/sharebite?createDatabaseIfNotExist=true
+db.user=root
+db.password=YOUR_MYSQL_PASSWORD

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/app.css">
+    <title>Dashboard - ShareBite</title>
+    <meta name="description" content="See available food donations and food requests on ShareBite.">
+</head>
+<body class="doc-body">
+    <nav class="app-bar" aria-label="Account">
+        <a class="brand" href="index.html">SHARE BITE</a>
+        <a href="dashboard.html">Dashboard</a>
+        <button type="button" id="logoutBtn">Logout</button>
+    </nav>
+
+    <main class="dash">
+        <h1 id="welcome">Welcome</h1>
+        <p>What would you like to do today?</p>
+
+        <div class="actions">
+            <a href="food-donor.html">Donate Food</a>
+            <a href="food-receiver.html">Request Food</a>
+            <a href="volunteers.html">Become a Volunteer</a>
+        </div>
+
+        <h2>Available Food Donations</h2>
+        <div class="table-wrap">
+            <p class="state" id="donationsState" role="status">Loading...</p>
+            <table id="donationsTable" hidden>
+                <thead>
+                    <tr>
+                        <th>Food</th>
+                        <th>Plates</th>
+                        <th>Type</th>
+                        <th>Pickup Address</th>
+                        <th>Pickup Date &amp; Time</th>
+                        <th>Donor</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <h2>Food Requests</h2>
+        <div class="table-wrap">
+            <p class="state" id="requestsState" role="status">Loading...</p>
+            <table id="requestsTable" hidden>
+                <thead>
+                    <tr>
+                        <th>Organization</th>
+                        <th>Type</th>
+                        <th>Quantity</th>
+                        <th>Delivery Location</th>
+                        <th>Date &amp; Time</th>
+                        <th>Receiver</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
